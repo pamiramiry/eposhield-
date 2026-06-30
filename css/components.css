@@ -1327,7 +1327,7 @@
 ═══════════════════════════════════════════════════════════════════ */
 .back-to-top {
   position: fixed;
-  bottom: calc(var(--s-6) + 68px); /* sits above mobile CTA bar */
+  bottom: calc(56px + 12px); /* sits above mobile CTA bar */
   right: var(--s-5);
   width: 44px;
   height: 44px;
@@ -1380,21 +1380,21 @@
   z-index: 190;
   background: var(--c-bg-dark);
   border-top: 1px solid rgba(255,255,255,0.08);
-  padding: var(--s-3) var(--s-4);
-  gap: var(--s-2);
+  padding: 8px 12px;
+  gap: 8px;
 }
 .mobile-cta-bar__call {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--s-2);
-  padding: var(--s-3) var(--s-2);
+  gap: 6px;
+  padding: 9px 8px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius);
   color: #fff;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.01em;
@@ -1406,8 +1406,8 @@
   color: #fff;
 }
 .mobile-cta-bar__call svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke: var(--c-accent);
   fill: none;
   stroke-width: 2;
@@ -1420,12 +1420,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--s-3) var(--s-2);
+  padding: 9px 8px;
   background: var(--c-accent);
   border: 1px solid var(--c-accent);
   border-radius: var(--radius);
   color: var(--c-bg-dark);
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.01em;
@@ -1439,7 +1439,7 @@
 @media (max-width: 768px) {
   .mobile-cta-bar { display: flex; }
   /* push page content above the bar */
-  body { padding-bottom: 72px; }
+  body { padding-bottom: 56px; }
   /* hide on the get-a-quote page — they're already on the form */
   body.page-quote .mobile-cta-bar { display: none; }
   body.page-quote { padding-bottom: 0; }
