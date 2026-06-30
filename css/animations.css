@@ -1,0 +1,58 @@
+/* ─── EpoShield — Animations ─────────────────────────────────────────────────
+   animations.css: IntersectionObserver-driven CSS transitions
+   No libraries. No parallax. No scroll counters.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Base animation states ──────────────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity  0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ─── Staggered children ─────────────────────────────────────────────────────── */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity  0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger.is-visible > *:nth-child(1)  { opacity: 1; transform: translateY(0); transition-delay:   0ms; }
+.stagger.is-visible > *:nth-child(2)  { opacity: 1; transform: translateY(0); transition-delay:  80ms; }
+.stagger.is-visible > *:nth-child(3)  { opacity: 1; transform: translateY(0); transition-delay: 160ms; }
+.stagger.is-visible > *:nth-child(4)  { opacity: 1; transform: translateY(0); transition-delay: 240ms; }
+.stagger.is-visible > *:nth-child(5)  { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+.stagger.is-visible > *:nth-child(6)  { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
+.stagger.is-visible > *:nth-child(7)  { opacity: 1; transform: translateY(0); transition-delay: 480ms; }
+.stagger.is-visible > *:nth-child(8)  { opacity: 1; transform: translateY(0); transition-delay: 560ms; }
+.stagger.is-visible > *:nth-child(9)  { opacity: 1; transform: translateY(0); transition-delay: 640ms; }
+.stagger.is-visible > *:nth-child(10) { opacity: 1; transform: translateY(0); transition-delay: 720ms; }
+
+/* ─── Accessibility: respect reduced motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-in,
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

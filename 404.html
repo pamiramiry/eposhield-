@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0F0F16">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Page Not Found | EpoShield</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    .not-found {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-16) var(--space-4);
+    }
+    .not-found__code {
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--c-accent);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-4);
+    }
+    .not-found__title {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      color: var(--c-text);
+    }
+    .not-found__body {
+      color: var(--c-text-muted);
+      max-width: 42ch;
+      margin: 0 auto var(--space-8);
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+    .not-found__actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .not-found__links {
+      margin-top: var(--space-12);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-6);
+      justify-content: center;
+      border-top: 1px solid var(--c-border);
+      padding-top: var(--space-8);
+    }
+    .not-found__links a {
+      color: var(--c-text-muted);
+      font-size: 0.9375rem;
+      text-decoration: none;
+    }
+    .not-found__links a:hover {
+      color: var(--c-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-nav">Skip to main content</a>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="EpoShield — Home">Epo<span>Shield</span></a>
+        <div class="nav__links">
+          <a href="/" class="nav__link">Home</a>
+          <div class="nav__dropdown">
+            <button class="nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="nav__dropdown-menu" role="menu">
+              <a href="/residential-epoxy-flooring" class="nav__dropdown-link" role="menuitem">Residential Epoxy Flooring</a>
+              <a href="/commercial-epoxy-flooring"  class="nav__dropdown-link" role="menuitem">Commercial Epoxy Flooring</a>
+              <a href="/industrial-epoxy-flooring"    class="nav__dropdown-link" role="menuitem">Industrial Epoxy Flooring</a>
+              <a href="/institutional-epoxy-flooring" class="nav__dropdown-link" role="menuitem">Institutional Epoxy Flooring</a>
+            </div>
+          </div>
+          <a href="/coating-systems" class="nav__link">Systems</a>
+          <a href="/gallery"         class="nav__link">Gallery</a>
+          <a href="/about"           class="nav__link">About</a>
+        </div>
+        <a href="/get-a-quote" class="btn btn--dark nav__cta">Get a Quote →</a>
+        <button class="nav__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav__mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+      <a href="/"                           class="nav__mobile-link">Home</a>
+      <a href="/residential-epoxy-flooring" class="nav__mobile-link">Residential Flooring</a>
+      <a href="/commercial-epoxy-flooring"  class="nav__mobile-link">Commercial Flooring</a>
+      <a href="/industrial-epoxy-flooring"    class="nav__mobile-link">Industrial Flooring</a>
+      <a href="/institutional-epoxy-flooring" class="nav__mobile-link">Institutional Flooring</a>
+      <a href="/coating-systems"              class="nav__mobile-link">Coating Systems</a>
+      <a href="/gallery"                    class="nav__mobile-link">Gallery</a>
+      <a href="/about"                      class="nav__mobile-link">About</a>
+      <div class="nav__mobile-cta">
+        <a href="/get-a-quote" class="btn btn--primary btn--lg btn--full">Get a Free Quote →</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="not-found">
+      <p class="not-found__code" aria-hidden="true">404</p>
+      <h1 class="not-found__title">Page Not Found</h1>
+      <p class="not-found__body">The page you're looking for may have moved or no longer exists. Let's get you back on solid ground.</p>
+      <div class="not-found__actions">
+        <a href="/" class="btn btn--primary">Back to Home</a>
+        <a href="/get-a-quote" class="btn btn--outline">Get a Quote</a>
+      </div>
+      <nav class="not-found__links" aria-label="Helpful links">
+        <a href="/residential-epoxy-flooring">Residential Flooring</a>
+        <a href="/commercial-epoxy-flooring">Commercial Flooring</a>
+        <a href="/industrial-epoxy-flooring">Industrial Flooring</a>
+        <a href="/coating-systems">Coating Systems</a>
+        <a href="/gallery">Project Gallery</a>
+        <a href="/about">About Us</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <a href="/" class="footer__logo">Epo<span>Shield</span></a>
+        <p class="footer__tagline">Premium concrete floor coatings for residential, commercial, and industrial spaces across Southern Ontario.</p>
+        <div class="footer__contact">
+          <a href="tel:4374100990" aria-label="Call EpoShield at (437) 410-0990">(437) 410-0990</a>
+          <a href="mailto:info@eposhield.com">info@eposhield.com</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__heading">Services</p>
+        <ul class="footer__links">
+          <li><a href="/residential-epoxy-flooring">Residential Epoxy Flooring</a></li>
+          <li><a href="/commercial-epoxy-flooring">Commercial Epoxy Flooring</a></li>
+          <li><a href="/industrial-epoxy-flooring">Industrial Epoxy Flooring</a></li>
+          <li><a href="/coating-systems">Coating Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Company</p>
+        <ul class="footer__links">
+          <li><a href="/gallery">Project Gallery</a></li>
+          <li><a href="/about">About EpoShield</a></li>
+          <li><a href="/get-a-quote">Get a Quote</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 EpoShield. All rights reserved.</p>
+      <p>Proudly serving Southern Ontario</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+
+</body>
+</html>

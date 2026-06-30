@@ -1,0 +1,219 @@
+/* ─── EpoShield — Design Tokens & Base ───────────────────────────────────────
+   main.css: custom properties, reset, base typography, utilities
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --c-text:        #0D0D0D;
+  --c-text-muted:  #6B6760;
+  --c-accent:      #C8A96E;
+  --c-accent-dark: #A88A52;
+  --c-bg:          #F5F2EE;
+  --c-bg-card:     #EDEAE5;
+  --c-bg-dark:     #0F0F16;
+  --c-border:      #D8D4CE;
+  --c-white:       #FFFFFF;
+
+  /* Typography */
+  --font: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Fluid type scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.5rem;
+  --text-2xl:  2rem;
+  --text-3xl:  clamp(1.75rem, 3.5vw, 2.75rem);
+  --text-hero: clamp(2.25rem, 5.5vw, 4.75rem);
+
+  /* Spacing — 8px base unit */
+  --s-1:  0.5rem;
+  --s-2:  1rem;
+  --s-3:  1.5rem;
+  --s-4:  2rem;
+  --s-5:  2.5rem;
+  --s-6:  3rem;
+  --s-8:  4rem;
+  --s-10: 5rem;
+  --s-12: 6rem;
+  --s-16: 8rem;
+
+  /* Layout */
+  --section-py:    clamp(4rem, 8vw, 7.5rem);
+  --container:     1320px;
+  --container-px:  clamp(1.25rem, 5vw, 5rem);
+
+  /* Radii */
+  --r-sm: 3px;
+  --r-md: 6px;
+
+  /* Border */
+  --border: 1px solid var(--c-border);
+
+  /* Transitions */
+  --t-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --t-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --t-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); font-weight: 500; }
+
+p { max-width: 65ch; }
+
+strong { font-weight: 600; }
+
+/* ─── Focus ──────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ─── Skip Navigation ────────────────────────────────────────────────────────── */
+.skip-nav {
+  position: absolute;
+  top: -200%;
+  left: var(--s-2);
+  z-index: 9999;
+  padding: 10px 18px;
+  background: var(--c-text);
+  color: var(--c-white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border-radius: var(--r-sm);
+  transition: top var(--t-fast);
+}
+.skip-nav:focus {
+  top: var(--s-2);
+}
+
+/* ─── Screen Reader Only ─────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────────────────── */
+.text-accent  { color: var(--c-accent); }
+.text-muted   { color: var(--c-text-muted); }
+.text-white   { color: var(--c-white); }
+.text-center  { text-align: center; }
+.mx-auto      { margin-inline: auto; }
+.mt-2  { margin-top: var(--s-2); }
+.mt-3  { margin-top: var(--s-3); }
+.mt-4  { margin-top: var(--s-4); }
+.mt-6  { margin-top: var(--s-6); }
+.mt-8  { margin-top: var(--s-8); }
+
+/* ─── Image Placeholder System ───────────────────────────────────────────────
+   Styled stand-ins while real photography is pending.
+   Replace any .ph element with an <img> when photos are ready.
+   ─────────────────────────────────────────────────────────────────────────── */
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-bg-card);
+}
+.ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 14px,
+    rgba(0,0,0,0.025) 14px,
+    rgba(0,0,0,0.025) 15px
+  );
+}
+.ph::after {
+  content: attr(data-ph);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  text-align: center;
+  padding: var(--s-2);
+  line-height: 1.5;
+}
+
+.ph-dark {
+  background: #1C1C26;
+}
+.ph-dark::before {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 14px,
+    rgba(255,255,255,0.015) 14px,
+    rgba(255,255,255,0.015) 15px
+  );
+}
+.ph-dark::after {
+  color: rgba(255,255,255,0.25);
+}
